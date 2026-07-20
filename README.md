@@ -6,23 +6,43 @@ The project is an assessment artifact, not official prommer.net content. Every p
 
 ## Workflow
 
+Generation and serving are deliberately separate execution environments. Codex runs only during a manual local generation command; the public container cannot run the scraper or either agent.
+
 ```mermaid
 flowchart LR
-  A[Deterministic press scraper] --> B[Preserved posts.json + source HTML]
-  B --> C[Fresh Codex research session + web search]
-  C --> D[research.json]
-  B --> E[Fresh independent critic/editor session]
-  D --> E
-  E --> F[validated.json + newsletter.md]
-  F --> G[Deterministic sanitized HTML renderer]
-  G --> H[Credential-free public viewer]
+  subgraph Local["Local manual generation — Codex authentication stays here"]
+    A[Deterministic press scraper] --> B[Preserved posts.json + source HTML]
+    B --> C[Fresh Codex researcher + web search]
+    C --> D[research.json]
+    B --> E[Fresh independent critic/editor + web search]
+    D --> E
+    E --> F[validated.json + newsletter.md]
+    F --> G[Validated and sanitized artifacts/latest]
+  end
+
+  G -->|operator commits completed artifacts| R[(Public source repository)]
+
+  subgraph Public["Interstellar — credential-free Docker viewer"]
+    R --> H[Node completed-artifact API]
+    H --> I[Editorial frontend]
+  end
 ```
 
-1. `src/coverage.js` fetches the configured press page, isolates `#coverage`, and preserves the first two unique entries in page order.
-2. A fresh ephemeral Codex session receives only the preserved post metadata and `prompts/researcher.md`. It searches for adjacent papers, events, reports, interviews, and other useful sources, then produces schema-constrained `research.json`.
-3. A second fresh ephemeral Codex session receives the original posts and the first agent's JSON through an explicit handoff. It independently verifies every candidate, rejects weak, stale, duplicated, or unsupported items, and produces `validated.json` plus `newsletter.md` using `prompts/editor.md`.
-4. Deterministic code validates both agent outputs, sanitizes the Markdown, records checksums and events, and atomically publishes `artifacts/latest`.
-5. The Docker image contains only the completed public artifacts and the viewer. Codex and its authentication are never copied into the image.
+### Local generation
+
+1. The operator runs `npm run generate` on a locally authenticated Codex installation.
+2. `src/coverage.js` fetches the configured press page, isolates `#coverage`, and preserves the first two unique entries in page order.
+3. A fresh ephemeral Codex session receives only the preserved post metadata and `prompts/researcher.md`. It searches for adjacent papers, events, reports, interviews, and other useful sources, then produces schema-constrained `research.json`.
+4. A second fresh ephemeral Codex session receives the original posts and the first agent's JSON through an explicit handoff. It independently verifies every candidate, rejects weak, stale, duplicated, or unsupported items, and produces `validated.json` plus `newsletter.md` using `prompts/editor.md`.
+5. Deterministic code validates both agent outputs, sanitizes the Markdown, records checksums and events, and atomically replaces `artifacts/latest` only after the complete run succeeds.
+6. The operator reviews and commits the completed public artifacts. The generation command itself does not commit or deploy anything.
+
+### Public delivery
+
+1. Infra builds the selected public repository revision into a Docker image.
+2. The Docker build installs production dependencies only, excluding the development-only Codex package.
+3. The image copies `artifacts/latest`, the Node completed-artifact API, and the frontend.
+4. Interstellar serves that immutable completed run. It receives no Codex installation, OpenAI credential, scraper trigger, or generation endpoint.
 
 ## Local generation
 
