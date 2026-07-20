@@ -1,0 +1,100 @@
+{
+  "accepted": [
+    {
+      "sourcePostUrl": "https://vcmagazine.com/beyond-passwords-how-ai-era-identity-platforms-are-redefining-trust-online/",
+      "title": "The State of Passkeys 2026: Global Consumer and Workforce Report",
+      "url": "https://fidoalliance.org/the-state-of-passkeys-2026-global-consumer-and-workforce-report/",
+      "kind": "industry report",
+      "publicationDate": "2026-05-07",
+      "evidence": [
+        {
+          "claim": "FIDO Alliance estimates that 5 billion passkeys are active globally and reports that 75% of surveyed consumers had enabled passkeys on at least some accounts.",
+          "url": "https://fidoalliance.org/the-state-of-passkeys-2026-global-consumer-and-workforce-report/"
+        },
+        {
+          "claim": "Among 1,400 surveyed workforce decision-makers, 68% of organizations were deploying, piloting, or rolling out passkeys for employee authentication.",
+          "url": "https://fidoalliance.org/the-state-of-passkeys-2026-global-consumer-and-workforce-report/"
+        }
+      ],
+      "editorialUse": "A current, quantified view of passwordless adoption that complements—but does not validate—the source article’s argument for continuous assurance after login. Attribute the estimates to FIDO and disclose its role promoting the standard."
+    },
+    {
+      "sourcePostUrl": "https://vcmagazine.com/beyond-passwords-how-ai-era-identity-platforms-are-redefining-trust-online/",
+      "title": "AI Identity: Standards, Gaps, and Research Directions for AI Agents",
+      "url": "https://arxiv.org/abs/2604.23280",
+      "kind": "research preprint",
+      "publicationDate": "2026-04-25",
+      "evidence": [
+        {
+          "claim": "The authors define AI identity as a continuous relationship between an agent’s declared identity and observed behavior, bounded by confidence that the two correspond.",
+          "url": "https://arxiv.org/abs/2604.23280"
+        },
+        {
+          "claim": "The review identifies five unresolved gaps, including semantic-intent verification, recursive-delegation accountability, and agent-identity integrity.",
+          "url": "https://arxiv.org/abs/2604.23280"
+        }
+      ],
+      "editorialUse": "Extends the continuous-trust discussion from human users to autonomous agents. Present it as a research agenda from an unreviewed preprint, not evidence from deployed systems."
+    },
+    {
+      "sourcePostUrl": "https://www.businessinsider.com/bosses-credit-human-employees-ai-delaying-promotions-raises-2026-7",
+      "title": "When AI Does the Work: Does Attribution Shape Meaning and Effort?",
+      "url": "https://www.iza.org/en/publications/dp/18784/when-ai-does-the-work-does-attribution-shape-meaning-and-effort",
+      "kind": "discussion paper",
+      "publicationDate": null,
+      "evidence": [
+        {
+          "claim": "The preregistered experiment used nationally representative US and Dutch samples to evaluate identical public-health slogans randomly attributed to a human or AI.",
+          "url": "https://www.iza.org/en/publications/dp/18784/when-ai-does-the-work-does-attribution-shape-meaning-and-effort"
+        },
+        {
+          "claim": "AI attribution modestly reduced perceived task meaning and made participants 13% less likely to volunteer a slogan of their own.",
+          "url": "https://www.iza.org/en/publications/dp/18784/when-ai-does-the-work-does-attribution-shape-meaning-and-effort"
+        }
+      ],
+      "editorialUse": "The strongest causal companion to the source coverage. It supports the narrower proposition that attribution can alter motivation, while its creative experimental task should not be generalized directly to engineering reviews."
+    },
+    {
+      "sourcePostUrl": "https://www.businessinsider.com/bosses-credit-human-employees-ai-delaying-promotions-raises-2026-7",
+      "title": "People Reduce Workers' Compensation for Using Artificial Intelligence (AI)",
+      "url": "https://arxiv.org/abs/2501.13228",
+      "kind": "research preprint",
+      "publicationDate": "2025-01-22",
+      "evidence": [
+        {
+          "claim": "Across 10 studies with 3,346 participants, workers described as using AI consistently received lower compensation.",
+          "url": "https://arxiv.org/abs/2501.13228"
+        },
+        {
+          "claim": "The authors link the penalty to reduced perceived credit and report that it also appeared with real gig workers and real payments.",
+          "url": "https://arxiv.org/abs/2501.13228"
+        }
+      ],
+      "editorialUse": "Direct empirical context for the reported credit-and-pay penalty. Retain the preprint caveat and avoid implying a measured effect on salaried engineering promotions."
+    },
+    {
+      "sourcePostUrl": "https://www.businessinsider.com/bosses-credit-human-employees-ai-delaying-promotions-raises-2026-7",
+      "title": "2026 Work Trend Index: Agents, Human Agency, and the Opportunity for Every Organization",
+      "url": "https://www.microsoft.com/en-us/worklab/work-trend-index/agents-human-agency-and-the-opportunity-for-every-organization",
+      "kind": "workplace research report",
+      "publicationDate": "2026-05-05",
+      "evidence": [
+        {
+          "claim": "Among surveyed workplace AI users, 65% feared falling behind if they did not adapt quickly, while only 13% said reinvention with AI was rewarded even when results were not met.",
+          "url": "https://www.microsoft.com/en-us/worklab/work-trend-index/agents-human-agency-and-the-opportunity-for-every-organization"
+        },
+        {
+          "claim": "In Microsoft’s model, organizational factors accounted for 67% of the importance assigned to reported AI impact and individual factors 32%; the report explicitly describes the relationship as associative, not causal.",
+          "url": "https://www.microsoft.com/en-us/worklab/work-trend-index/agents-human-agency-and-the-opportunity-for-every-organization"
+        }
+      ],
+      "editorialUse": "Broadens the attribution story into incentives and organizational design. Use cautiously because the measures are self-reported and Microsoft has a commercial interest in workplace AI adoption."
+    }
+  ],
+  "rejected": [
+    {
+      "url": "https://www.nist.gov/publications/nist-sp-800-63-4-digital-identity-guidelines",
+      "reason": "The cited page supports the stated scope, date, and supersession claim, but the standard is an older general baseline for government-facing human identity systems. It is less timely and less directly connected to continuous behavioral or agent assurance than the accepted identity items."
+    }
+  ]
+}

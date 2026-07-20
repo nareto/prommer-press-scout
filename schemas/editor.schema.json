@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["validated", "newsletterMarkdown"],
+  "properties": {
+    "validated": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["accepted", "rejected"],
+      "properties": {
+        "accepted": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["sourcePostUrl", "title", "url", "kind", "publicationDate", "evidence", "editorialUse"],
+            "properties": {
+              "sourcePostUrl": { "type": "string" },
+              "title": { "type": "string" },
+              "url": { "type": "string" },
+              "kind": { "type": "string" },
+              "publicationDate": { "type": ["string", "null"] },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["claim", "url"],
+                  "properties": {
+                    "claim": { "type": "string" },
+                    "url": { "type": "string" }
+                  }
+                }
+              },
+              "editorialUse": { "type": "string" }
+            }
+          }
+        },
+        "rejected": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["url", "reason"],
+            "properties": {
+              "url": { "type": "string" },
+              "reason": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "newsletterMarkdown": { "type": "string" }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["sourcePosts"],
+  "properties": {
+    "sourcePosts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["sourcePostUrl", "candidates"],
+        "properties": {
+          "sourcePostUrl": { "type": "string" },
+          "candidates": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["title", "url", "kind", "publicationDate", "evidence", "relevance", "uncertainties"],
+              "properties": {
+                "title": { "type": "string" },
+                "url": { "type": "string" },
+                "kind": { "type": "string" },
+                "publicationDate": { "type": ["string", "null"] },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": ["claim", "url"],
+                    "properties": {
+                      "claim": { "type": "string" },
+                      "url": { "type": "string" }
+                    }
+                  }
+                },
+                "relevance": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["foundersOperators", "pressPodcastBookers"],
+                  "properties": {
+                    "foundersOperators": { "type": "string" },
+                    "pressPodcastBookers": { "type": "string" }
+                  }
+                },
+                "uncertainties": { "type": "array", "items": { "type": "string" } }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

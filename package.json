@@ -1,0 +1,23 @@
+{
+  "name": "prommer-press-scout",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A bounded editorial research pipeline for public press coverage.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "generate": "node scripts/generate.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "cheerio": "1.2.0",
+    "marked": "18.0.6",
+    "sanitize-html": "2.17.6"
+  },
+  "devDependencies": {
+    "@openai/codex": "0.144.6"
+  }
+}

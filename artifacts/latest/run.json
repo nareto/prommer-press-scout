@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "runId": "20260720T085616Z-4cefff79",
+  "status": "completed",
+  "startedAt": "2026-07-20T08:56:16.811Z",
+  "completedAt": "2026-07-20T08:58:45.349Z",
+  "pressPageUrl": "https://prommer.net/en/tech/press/",
+  "finalPressPageUrl": "https://prommer.net/en/tech/press/",
+  "sourceCount": 2,
+  "acceptedCount": 5,
+  "rejectedCount": 1,
+  "limits": {
+    "maxArticles": 2,
+    "fetchTimeoutMs": 15000,
+    "agentTimeoutMs": 600000,
+    "maxPressBytes": 2097152,
+    "maxAgentOutputBytes": 524288
+  },
+  "agents": [
+    {
+      "role": "researcher",
+      "freshSession": true,
+      "webSearch": true,
+      "output": "research.json"
+    },
+    {
+      "role": "critic-editor",
+      "freshSession": true,
+      "webSearch": true,
+      "input": "handoffs/editor-input.json",
+      "outputs": [
+        "validated.json",
+        "newsletter.md"
+      ]
+    }
+  ],
+  "checksums": {
+    "editor-output.json": "38d7e434ac4fd36afa210af78849caa259052272a3f7e49bc93342b26aa48981",
+    "events.json": "e4811fe77ce2a095cf0f481ef07a99f0b361d043d686fbbf0ed6d0164de5a774",
+    "handoffs/editor-input.json": "e9cec6e0aeba27909e88ea6198d2e90a3b9da6a5c104de37bf0146b04b6bfcef",
+    "handoffs/editor-prompt.md": "37ccf4e63cdd4bbf323ffb34e02cad280f5d4491fd4e800b4a13953ebbc2bd1f",
+    "handoffs/researcher-prompt.md": "4891133feb657b2112223c8b9ee05e93bddcfb1a04b5cea2eb65f958b9cc1398",
+    "inputs/coverage-posts.html": "22b652618bd2360095b296a877641ac51a96176d053ddc59ba35f4b096f14a7d",
+    "inputs/posts/post-01.html": "bb1c1ccf3942a22e040ee05fd3160ce22631e6778767bf0d44c76a556713a522",
+    "inputs/posts/post-02.html": "b90d40bd7f59b84adc4d6c010dc6b4897e7205c860960fec2fb5940d85e6d988",
+    "inputs/posts.json": "5001d18df86b4061da52fc25a34eb755b901e216f376a2a747c6c7bf758636b6",
+    "newsletter.html": "d97aec0a1fb79c3514f9a8592e4227590a2f0c7d4334b373e8dc1c6e37b5e1ca",
+    "newsletter.md": "e5608b03771facc462536a3ed28078dbc5bf3ce47418e92e0d9bd2a8f6cfdb97",
+    "research.json": "20aaac11200147094ac9fec2c2e2385d7458ac4e57d576c8b675cde4851d3dde",
+    "research.raw.json": "4e7f8efc9f31764456ab9e4df09ec77edcdfcd549514ad899d8c4bf9daefa617",
+    "validated.json": "741b6c60380ad5c4f7bae07936f32fb06b5171e6b10051c25b5e196e5ac46d15"
+  }
+}

@@ -1,0 +1,39 @@
+[
+  {
+    "at": "2026-07-20T08:56:16.811Z",
+    "phase": "scrape_started"
+  },
+  {
+    "at": "2026-07-20T08:56:17.193Z",
+    "phase": "scrape_completed",
+    "postCount": 2,
+    "finalUrl": "https://prommer.net/en/tech/press/"
+  },
+  {
+    "at": "2026-07-20T08:56:17.200Z",
+    "phase": "researcher_started",
+    "freshSession": true,
+    "webSearch": true
+  },
+  {
+    "at": "2026-07-20T08:57:23.375Z",
+    "phase": "researcher_completed",
+    "candidateCount": 6
+  },
+  {
+    "at": "2026-07-20T08:57:23.384Z",
+    "phase": "editor_started",
+    "freshSession": true,
+    "webSearch": true
+  },
+  {
+    "at": "2026-07-20T08:58:45.381Z",
+    "phase": "editor_completed",
+    "acceptedCount": 5,
+    "rejectedCount": 1
+  },
+  {
+    "at": "2026-07-20T08:58:45.381Z",
+    "phase": "run_completed"
+  }
+]
